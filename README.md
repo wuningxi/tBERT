@@ -1,5 +1,7 @@
 # tBERT 
 
+![Alt text](tBERT.jpg?raw=true "tBERT model")
+
 This repository provides code for the paper "tBERT: Topic Models and BERT Joining Forces for Semantic Similarity Detection" (https://www.aclweb.org/anthology/2020.acl-main.630/).
 
 ## Setup
@@ -33,46 +35,66 @@ wget "https://www.dropbox.com/s/thhym7njtgp8uoh/data.tar.gz"
 ```
 tar zxvf data.tar.gz &   
 ```
-- Your data directory should now have the following content:
+- Your tBERT directory should now have the following content:
 ```
-data/
-├── cache
-├── logs
-├── models
-├── MSRP
-├── Quora
-├── Semeval
-├── STS
-└── topic_models
-    ├── basic
-    │   ├── MSRP_alpha1_80
-    │   │   └── ldamallet
-    │   │       └── predictions
-    │   ├── Quora_alpha1_90
-    │   │   └── ldamallet
-    │   │       └── predictions
-    │   ├── Semeval_alpha10_70
-    │   │   └── ldamallet
-    │   │       └── predictions
-    │   ├── Semeval_alpha10_80
-    │   │   └── ldamallet
-    │   │       └── predictions
-    │   └── Semeval_alpha50_70
-    │       └── ldamallet
-    │           └── predictions
-    └── basic_gsdmm
-        ├── MSRP_alpha0.1_80
-        │   └── gsdmm
-        │       └── predictions
-        ├── Quora_alpha0.1_90
-        │   └── gsdmm
-        │       └── predictions
-        ├── Semeval_alpha0.1_70
-        │   └── gsdmm
-        │       └── predictions
-        └── Semeval_alpha0.1_80
-            └── gsdmm
-                └── predictions
+.
+├── data
+│   ├── cache
+│   ├── logs
+│   ├── models
+│   ├── MSRP
+│   ├── Quora
+│   ├── Semeval
+│   ├── STS
+│   └── topic_models
+│       ├── basic
+│       │   ├── MSRP_alpha1_80
+│       │   │   └── ldamallet
+│       │   │       └── predictions
+│       │   ├── Quora_alpha1_90
+│       │   │   └── ldamallet
+│       │   │       └── predictions
+│       │   ├── Semeval_alpha10_70
+│       │   │   └── ldamallet
+│       │   │       └── predictions
+│       │   ├── Semeval_alpha10_80
+│       │   │   └── ldamallet
+│       │   │       └── predictions
+│       │   └── Semeval_alpha50_70
+│       │       └── ldamallet
+│       │           └── predictions
+│       └── basic_gsdmm
+│           ├── MSRP_alpha0.1_80
+│           │   └── gsdmm
+│           │       └── predictions
+│           ├── Quora_alpha0.1_90
+│           │   └── gsdmm
+│           │       └── predictions
+│           ├── Semeval_alpha0.1_70
+│           │   └── gsdmm
+│           │       └── predictions
+│           └── Semeval_alpha0.1_80
+│               └── gsdmm
+│                   └── predictions
+└── src
+    ├── evaluation
+    │   ├── difficulty
+    │   ├── metrics
+    ├── experiments
+    ├── loaders
+    │   ├── MSRP
+    │   ├── PAWS
+    │   ├── Quora
+    │   └── Semeval
+    ├── logs
+    ├── models
+    │   ├── forward
+    │   ├── helpers
+    ├── preprocessing
+    ├── ShortTextTopic
+    │   ├── gsdmm
+    │   └── test
+    └── topic_model
 ```
 
 ### Requirements
@@ -85,7 +107,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-- You can try out if everything works by traing a model on a small portion of the data (you can play around with different model options by changing the opt dictionary):
+- You can try out if everything works by training a model on a small portion of the data (you can play around with different model options by changing the opt dictionary). Please make sure you are in the top tBERT directory when executing the following commands (`ls` should show `data  data.tar.gz  README.md  requirements.txt  src` as output):
 ```
 python src/models/base_model_bert.py
 ```
