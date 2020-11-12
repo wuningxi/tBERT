@@ -73,7 +73,7 @@ if 'Semeval' in dataset:
 else:
     task = 'B'
     if dataset== 'Quora':
-        subsets = ['train', 'dev', 'test','p_test'] # also evaluate on PAWS
+        subsets = ['train', 'dev', 'test'] 
         num_topics = 90
         if FLAGS.topic_type=='gsdmm':
             alpha = 0.1

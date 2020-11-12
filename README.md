@@ -27,15 +27,15 @@ unzip uncased_L-12_H-768_A-12.zip
 ```
 cd /path/to/tBERT/
 ```
-- Download topic models and cached datasets (data.tar.gz) from dropbox into data folder:
+- Download topic models and original datasets from dropbox:
 ```
-wget "https://www.dropbox.com/s/thhym7njtgp8uoh/data.tar.gz"
+wget "https://www.dropbox.com/s/6p26mkwv62677zt/original_data.tar.gz"
 ```
-- Uncompress data.tar.gz:
+- Uncompress original_data.tar.gz:
 ```
-tar zxvf data.tar.gz &   
+tar zxvf original_data.tar.gz &
 ```
-- Your tBERT directory should now have the following content:
+- Your tBERT directory should now have the following content (the Semeval folder is empty because data will be automatically downloaded by the script):
 ```
 .
 ├── data
@@ -43,39 +43,29 @@ tar zxvf data.tar.gz &
 │   ├── logs
 │   ├── models
 │   ├── MSRP
+│   │   └── MSRParaphraseCorpus
+│   │       ├── msr-para-test.tsv
+│   │       ├── msr-para-train.tsv
+│   │       └── msr-para-val.tsv
 │   ├── Quora
+│   │   └── Quora_question_pair_partition
+│   │       ├── dev.tsv
+│   │       ├── test.tsv
+│   │       └── train.tsv
 │   ├── Semeval
-│   ├── STS
 │   └── topic_models
 │       ├── basic
 │       │   ├── MSRP_alpha1_80
-│       │   │   └── ldamallet
-│       │   │       └── predictions
 │       │   ├── Quora_alpha1_90
-│       │   │   └── ldamallet
-│       │   │       └── predictions
 │       │   ├── Semeval_alpha10_70
-│       │   │   └── ldamallet
-│       │   │       └── predictions
 │       │   ├── Semeval_alpha10_80
-│       │   │   └── ldamallet
-│       │   │       └── predictions
 │       │   └── Semeval_alpha50_70
-│       │       └── ldamallet
-│       │           └── predictions
-│       └── basic_gsdmm
-│           ├── MSRP_alpha0.1_80
-│           │   └── gsdmm
-│           │       └── predictions
-│           ├── Quora_alpha0.1_90
-│           │   └── gsdmm
-│           │       └── predictions
-│           ├── Semeval_alpha0.1_70
-│           │   └── gsdmm
-│           │       └── predictions
-│           └── Semeval_alpha0.1_80
-│               └── gsdmm
-│                   └── predictions
+│       ├── basic_gsdmm
+│       │   ├── MSRP_alpha0.1_80
+│       │   ├── Quora_alpha0.1_90
+│       │   ├── Semeval_alpha0.1_70
+│       │   └── Semeval_alpha0.1_80
+│       └── mallet-2.0.8.zip
 └── src
     ├── evaluation
     │   ├── difficulty

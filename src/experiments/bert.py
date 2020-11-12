@@ -40,10 +40,7 @@ if 'Semeval' in dataset:
         batch_size = 16 # need smaller minibatch to fit on GPU due to long sentences
 else:
     task = 'B'
-    if dataset== 'Quora':
-        subsets = ['train', 'dev', 'test','p_test'] # also evaluate on PAWS
-    else:
-        subsets = ['train', 'dev', 'test'] #MSRP
+    subsets = ['train', 'dev', 'test'] 
 
 if FLAGS.debug:
     max_m = 100

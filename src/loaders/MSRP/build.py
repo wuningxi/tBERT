@@ -13,9 +13,9 @@ def reformat_split(outpath, dtype, inpath):
     with open(os.path.join(outpath, dtype+'_B.txt'), 'w', encoding='utf-8') as output_file:
         with open(inpath, newline='', encoding='utf-8') as f:
             csv_reader = csv.reader(f, delimiter='\t',quoting=csv.QUOTE_NONE,quotechar='|')
-            print(next(csv_reader)) # skip header
+            next(csv_reader) # skip header
             for line in csv_reader:
-                print(line)
+                #print(line)
                 labelB, id1, id2, doc1, doc2 = line
                 output_file.write(id1 + '\t' + id2 + '\t' + doc1 + '\t' + doc2 + '\t' + labelB + '\n')
 
