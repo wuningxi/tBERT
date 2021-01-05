@@ -30,7 +30,9 @@
 # Data folder #
 ###############
 data/*
+/data
 !data/.gitkeep 
+original_data.tar.gz
 
 # OS generated files #
 ######################
