@@ -236,4 +236,6 @@ pip-install-ob_rbe5r/MarkupSafe/setup.py
 ```
 pip install --upgrade pip setuptools==45.2.0
 sudo python3 -m pip install -r requirements.txt
+python3 -m pip install tensorflow-gpu -i https://pypi.douban.com/simple
+
 ```
