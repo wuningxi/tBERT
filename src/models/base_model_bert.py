@@ -174,7 +174,7 @@ def model(data_dict, opt, logfile=None, print_dim=False):
         gpu = opt.get('gpu', -1)
 
         # general settings
-        session_config = tf.compat.v1.ConfigProto()
+        session_config = tf.ConfigProto()
         if not gpu == -1:
             print('Running on GPU: {}'.format(gpu))
             os.environ["CUDA_VISIBLE_DEVICES"] = str(gpu)  # specifies which GPU to use (if multiple are available)
@@ -186,7 +186,7 @@ def model(data_dict, opt, logfile=None, print_dim=False):
         seed_list = [random.randint(1, 100000) for i in range(100)] # generate list of seeds to be used in the model
 
         np.random.seed(seed_list.pop(0))
-        tf.random.set_seed(seed_list.pop(0))  # set tensorflow seed to keep results consistent
+        tf.set_random_seed(seed_list.pop(0))  # set tensorflow seed to keep results consistent
 
         #####
         # unpack data and assign to model variables
@@ -602,7 +602,7 @@ def model(data_dict, opt, logfile=None, print_dim=False):
         # Start session to execute Tensorflow graph
         #####
 
-        with tf.Session(config=session_config) as sess: #config=tf.compat.v1.ConfigProto(log_device_placement=True)
+        with tf.Session(config=session_config) as sess: #config=tf.ConfigProto(log_device_placement=True)
 
             # add debugger (but not for batch experiments)
             if __name__ == '__main__' and FLAGS.debug:
