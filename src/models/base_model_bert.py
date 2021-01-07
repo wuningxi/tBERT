@@ -1,10 +1,18 @@
+import sys
+import os
+curPath = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(curPath)[0]
+sys.path.append(os.path.split(rootPath)[0])
+
 import math
 import traceback
 import numpy as np
 import sys
 import importlib
 import argparse
-import tensorflow as tf
+#import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.compat.v1.disable_eager_execution()
 from tensorflow.python import debug as tf_debug
 from tensorflow.python.framework import ops
 from src.models.tf_helpers import lookup_embedding,initialise_pretrained_embedding
@@ -166,7 +174,7 @@ def model(data_dict, opt, logfile=None, print_dim=False):
         gpu = opt.get('gpu', -1)
 
         # general settings
-        session_config = tf.ConfigProto()
+        session_config = tf.compat.v1.ConfigProto()
         if not gpu == -1:
             print('Running on GPU: {}'.format(gpu))
             os.environ["CUDA_VISIBLE_DEVICES"] = str(gpu)  # specifies which GPU to use (if multiple are available)
@@ -178,7 +186,7 @@ def model(data_dict, opt, logfile=None, print_dim=False):
         seed_list = [random.randint(1, 100000) for i in range(100)] # generate list of seeds to be used in the model
 
         np.random.seed(seed_list.pop(0))
-        tf.set_random_seed(seed_list.pop(0))  # set tensorflow seed to keep results consistent
+        tf.random.set_seed(seed_list.pop(0))  # set tensorflow seed to keep results consistent
 
         #####
         # unpack data and assign to model variables
@@ -594,7 +602,7 @@ def model(data_dict, opt, logfile=None, print_dim=False):
         # Start session to execute Tensorflow graph
         #####
 
-        with tf.Session(config=session_config) as sess: #config=tf.ConfigProto(log_device_placement=True)
+        with tf.Session(config=session_config) as sess: #config=tf.compat.v1.ConfigProto(log_device_placement=True)
 
             # add debugger (but not for batch experiments)
             if __name__ == '__main__' and FLAGS.debug:
