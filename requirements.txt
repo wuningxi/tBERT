@@ -108,7 +108,7 @@ ptyprocess==0.5.2
 py==1.5.2
 pyasn1==0.4.4
 pycparser==2.19
-Pygments==2.2.0
+Pygments==2.7.4
 PyJWT==1.7.1
 pyLDAvis==2.1.2
 pymongo==3.6.0
