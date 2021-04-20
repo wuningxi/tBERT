@@ -105,7 +105,7 @@ progressbar33==2.4
 prompt-toolkit==1.0.15
 protobuf==3.7.0
 ptyprocess==0.5.2
-py==1.5.2
+py==1.10.0
 pyasn1==0.4.4
 pycparser==2.19
 Pygments==2.2.0
