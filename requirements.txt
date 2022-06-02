@@ -40,7 +40,7 @@ GitPython==2.1.11
 googleapis-common-protos==1.5.3
 grpcio==1.12.1
 h5py==2.7.1
-html5lib==0.9999999
+html5lib==0.99999999
 humanfriendly==4.17
 hyperopt==0.1
 idna==2.6
