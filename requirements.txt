@@ -68,7 +68,7 @@ liac-arff==2.3.1
 Markdown==2.6.11
 MarkupSafe==1.0
 matplotlib==2.1.2
-mistune==0.8.3
+mistune==2.0.3
 mlxtend==0.15.0.0
 msgpack==0.5.6
 msgpack-numpy==0.4.3.2
