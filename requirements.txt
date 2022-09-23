@@ -103,7 +103,7 @@ portalocker==1.2.1
 preshed==2.0.1
 progressbar33==2.4
 prompt-toolkit==1.0.15
-protobuf==3.7.0
+protobuf==3.18.3
 ptyprocess==0.5.2
 py==1.5.2
 pyasn1==0.4.4
