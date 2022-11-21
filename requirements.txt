@@ -141,7 +141,7 @@ spacy==2.0.16
 statsmodels==0.9.0
 tabulate==0.8.2
 tensorboard==1.11.0
-tensorflow-gpu==1.11.0
+tensorflow-gpu==2.9.3
 tensorflow-hub==0.3.0
 termcolor==1.1.0
 terminado==0.8.1
